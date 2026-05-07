@@ -43,13 +43,13 @@ while True:
         hora = 15
         if pagamento_ticket == "nao":
             print("Volte ao totem e conclua o pagamento. \nSe aconteceu perca de ticket será cobrado uma taxa de R$50,00")
-        elif pagamento_ticket == "sim":
-            if total_hora <= 0.15:
-                print("Liberando a cancela...")
-            if total_hora > 0 and total_hora < 0.15:
-                print("Você deve pagar R$15,00 ")
-            if total_hora > 3:
-                hora_add = (total_hora - 3)*3
+            if pagamento_ticket == "sim":
+                if total_hora <= 0.15:
+                    print("Liberando a cancela...")
+                if total_hora > 0 and total_hora < 0.15:
+                    print("Você deve pagar R$15,00 ")
+                if total_hora > 3:
+                    hora_add = (total_hora - 3)*3
                 print("Você deve pagar R$",hora_add+hora)
     elif opcao == 2:
         print("Analisando Tag")
