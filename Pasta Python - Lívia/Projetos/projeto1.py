@@ -29,32 +29,40 @@ while True:
     import time
     ticket = 500
     print("Seja bem-vindo!")
+    time.sleep(1.5)
     print("Selecione a opção de estacionamento: ")
     print("1 - Via Ticket")
     print("2 - Via Tag")
     opcao = int(input("Opção: "))
     if opcao == 1:
+        time.sleep(1.5)
         print("Liberando Ticket")
         ticket =-1 
+        time.sleep(1.5)
         hora_entrada = float(input("Digite o horário de entrada"))
         hora_saida = float(input("Digite o horário de saída"))
         pagamento_ticket= input("Foi realizado o pagamento do ticket?")
         total_hora = hora_saida - hora_entrada
         hora = 15
+        hora_add = 0
         if pagamento_ticket == "nao":
             print("Volte ao totem e conclua o pagamento. \nSe aconteceu perca de ticket será cobrado uma taxa de R$50,00")
-            if pagamento_ticket == "sim":
-                if total_hora <= 0.15:
-                    print("Liberando a cancela...")
-                if total_hora > 0 and total_hora < 0.15:
-                    print("Você deve pagar R$15,00 ")
-                if total_hora > 3:
-                    hora_add = (total_hora - 3)*3
+        if pagamento_ticket == "sim":
+            if total_hora > 0 and total_hora < 0.15:
+                print("Cobrança isenta, você tem 15 minutos de tolerância")
+            elif total_hora <= 3:
+                print("Você deve pagar R$15,00 ")
+            elif total_hora > 3:
+                hora_add = (total_hora - 3)*3
                 print("Você deve pagar R$",hora_add+hora)
+            print("Obrigado! Volte Sempre")
     elif opcao == 2:
         print("Analisando Tag")
+        time.sleep(1.5)
         print("O custo referente ao período em que o veículo permaneceu no estacionamento será incluído em sua conta.")
         print("Liberanco cancela...")
+        time.sleep(1)
         print("Obrigado! Volte Sempre")
     if ticket ==0:
         print("Vagas comuns esgotadas, tente a entrada via Tag!")
+    
