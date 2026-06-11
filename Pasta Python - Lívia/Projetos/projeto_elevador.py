@@ -12,3 +12,4 @@
 # Abrir ao chegar no andar.
 # Botão de "Abrir Porta" e "Fechar Porta"
 # Se algo bloquear a porta, o motor de fechamento deve reverter imediatamente. 
+
